@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Git &amp; GitHub : Version Control</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="screen-orientation" content="landscape">
+<title>Git &amp; GitHub — Complete Student Resource | DCSE250122</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Sora:wght@300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════
@@ -318,15 +319,72 @@ tr:nth-child(even) td{background:var(--paper);}
   .sum-row{grid-template-columns:1fr;}
   .p-slide h2{font-size:20px;}
 }
+
+/* ══════════════════════════════════════════
+   PORTRAIT LOCK OVERLAY
+══════════════════════════════════════════ */
+#portrait-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #0f0f1a;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  padding: 40px;
+}
+#portrait-overlay .rotate-icon {
+  font-size: 64px;
+  animation: spin-nudge 1.4s ease-in-out infinite;
+}
+@keyframes spin-nudge {
+  0%   { transform: rotate(0deg);   }
+  30%  { transform: rotate(-80deg); }
+  60%  { transform: rotate(0deg);   }
+  100% { transform: rotate(0deg);   }
+}
+#portrait-overlay h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  color: #f4a347;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+#portrait-overlay p {
+  font-size: 14px;
+  color: #9ca3af;
+  max-width: 280px;
+  margin: 0;
+}
+#portrait-overlay .p-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  background: #2a2a3e;
+  color: #f4a347;
+  border: 1px solid #444;
+  border-radius: 20px;
+  padding: 5px 18px;
+  margin-top: 8px;
+}
+
+/* In portrait, hide everything except the overlay */
+@media (orientation: portrait) {
+  #portrait-overlay { display: flex !important; }
+  #guide-app, #pres-app { visibility: hidden; }
+}
 </style>
 </head>
 <body>
 
 <!-- ══════════════════════ MODE SWITCHER ══════════════════════ -->
 <div id="mode-bar">
-  <div class="site-name">📦 Git &amp; GitHub : Version Control</div>
+  <div class="site-name">📦 DCSE250122</div>
   <button class="mode-btn active" onclick="setMode('guide')">📚 Student Guide</button>
-  <button class="mode-btn pres-btn" class="select" onclick="setMode('pres')">🖥️ Class Presentation</button>
+  <button class="mode-btn pres-btn" onclick="setMode('pres')">🖥️ Class Presentation</button>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -336,12 +394,12 @@ tr:nth-child(even) td{background:var(--paper);}
 
 <div class="hero">
   <h1>$ git learn --fun --fast</h1>
-  <p>Version Control with Git &amp; GitHub | Your complete student survival guide: plain-English explanations, step-by-step labs, GitHub CLI, GitHub Desktop, Linux terminal basics, troubleshooting, and cheat sheets.</p>
+  <p>Version Control with Git &amp; GitHub — DCSE250122 | Your complete student survival guide: plain-English explanations, step-by-step labs, GitHub CLI, GitHub Desktop, Linux terminal basics, troubleshooting, and cheat sheets.</p>
   <div class="pills">
     <span class="pill">5 Modules</span><span class="pill">10 Labs</span>
     <span class="pill">4 Credits</span><span class="pill">gh CLI</span>
     <span class="pill">GitHub Desktop</span><span class="pill">Linux Terminal</span>
-    <span class="pill">Troubleshooting</span>
+    <span class="pill">Troubleshooting</span><span class="pill">NIELIT BCA 2025</span>
   </div>
 </div>
 
@@ -900,6 +958,7 @@ tr:nth-child(even) td{background:var(--paper);}
 
   <div class="p-slide title-slide active" style="background:#111827">
     <div class="title-num">1</div><div class="title-accent"></div>
+    <div class="mod-eyebrow">Module 1 · DCSE250122</div>
     <h1>GitHub Basics<br>&amp; Your Repo's Home</h1>
     <div class="p-subtitle">Repositories, commits, branches, issues, labels &amp; milestones — the full GitHub interface.</div>
     <div class="tag-row"><span class="p-tag">Repositories</span><span class="p-tag">Commits</span><span class="p-tag">Branches</span><span class="p-tag">Issues</span><span class="p-tag">Milestones</span><span class="p-tag">README</span></div>
@@ -1070,6 +1129,7 @@ tr:nth-child(even) td{background:var(--paper);}
 <div class="p-deck" id="deck-1">
   <div class="p-slide title-slide active" style="background:#0f172a">
     <div class="title-num">2</div><div class="title-accent" style="background:#3b82f6"></div>
+    <div class="mod-eyebrow" style="color:#60a5fa">Module 2 · DCSE250122</div>
     <h1>Teams &amp;<br>Organizations</h1>
     <div class="p-subtitle">Managing people, permissions, and collaboration at scale.</div>
     <div class="tag-row"><span class="p-tag">Organizations</span><span class="p-tag">Teams</span><span class="p-tag">Permissions</span><span class="p-tag">Audit Log</span><span class="p-tag">Outside Collaborators</span></div>
@@ -1153,6 +1213,7 @@ tr:nth-child(even) td{background:var(--paper);}
 <div class="p-deck" id="deck-2">
   <div class="p-slide title-slide active" style="background:#134e4a">
     <div class="title-num">3</div><div class="title-accent" style="background:#10b981"></div>
+    <div class="mod-eyebrow" style="color:#6ee7b7">Module 3 · DCSE250122</div>
     <h1>Pull Requests<br>&amp; Code Review</h1>
     <div class="p-subtitle">The professional workflow for merging code — propose, review, discuss, and merge safely.</div>
     <div class="tag-row"><span class="p-tag">Pull Requests</span><span class="p-tag">Fork &amp; Pull</span><span class="p-tag">Shared Repo</span><span class="p-tag">Inline Comments</span><span class="p-tag">Merge</span><span class="p-tag">Revert</span></div>
@@ -1246,6 +1307,7 @@ tr:nth-child(even) td{background:var(--paper);}
 <div class="p-deck" id="deck-3">
   <div class="p-slide title-slide active" style="background:#1e1b4b">
     <div class="title-num">4</div><div class="title-accent" style="background:#8b5cf6"></div>
+    <div class="mod-eyebrow" style="color:#a78bfa">Module 4 · DCSE250122</div>
     <h1>GitHub Pages<br>&amp; Analytics</h1>
     <div class="p-subtitle">Turn your repository into a live website for free — then use analytics to monitor your project.</div>
     <div class="tag-row"><span class="p-tag">GitHub Pages</span><span class="p-tag">Jekyll</span><span class="p-tag">Custom Domain</span><span class="p-tag">Pulse</span><span class="p-tag">Traffic</span></div>
@@ -1279,7 +1341,7 @@ tr:nth-child(even) td{background:var(--paper);}
       </div>
       <div class="p-code">
         <span class="cm"># _config.yml:</span><br>
-        <span class="ck">title</span>: <span class="cs">My BSc Project</span><br>
+        <span class="ck">title</span>: <span class="cs">My BCA Project</span><br>
         <span class="ck">theme</span>: <span class="cs">minima</span><br>
         <span class="ck">description</span>: <span class="cs">Built with GitHub Pages</span>
       </div>
@@ -1320,6 +1382,7 @@ tr:nth-child(even) td{background:var(--paper);}
 <div class="p-deck" id="deck-4">
   <div class="p-slide title-slide active" style="background:#0c1a0c">
     <div class="title-num">5</div><div class="title-accent" style="background:#22c55e"></div>
+    <div class="mod-eyebrow" style="color:#86efac">Module 5 · DCSE250122</div>
     <h1>Settings<br>&amp; Security</h1>
     <div class="p-subtitle">SSH keys, 2FA, repo settings, notifications — lock down your account and streamline your workflow.</div>
     <div class="tag-row"><span class="p-tag">SSH Keys</span><span class="p-tag">2FA</span><span class="p-tag">User Settings</span><span class="p-tag">Repo Settings</span><span class="p-tag">Notifications</span></div>
@@ -1408,6 +1471,13 @@ tr:nth-child(even) td{background:var(--paper);}
 
 </div><!-- end pres-app -->
 
+<!-- ══════════════════════ PORTRAIT LOCK ══════════════════════ -->
+<div id="portrait-overlay">
+  <div class="rotate-icon">📱</div>
+  <h2>Rotate Your Device</h2>
+  <p>This resource is designed for landscape mode. Please rotate your device sideways for the best experience.</p>
+</div>
+
 <!-- ══════════════════════ SCRIPTS ══════════════════════ -->
 <script>
 /* ── MODE SWITCHING ── */
@@ -1492,7 +1562,30 @@ document.addEventListener('keydown', function(e) {
 
 // Init
 switchModule(0);
-setMode("guide");
+
+/* ── ORIENTATION LOCK ── */
+function checkOrientation() {
+  const overlay = document.getElementById('portrait-overlay');
+  const isPortrait = window.innerHeight > window.innerWidth;
+  overlay.style.display = isPortrait ? 'flex' : 'none';
+  // Also try the Screen Orientation API if available
+}
+
+// Try to lock orientation via Screen Orientation API (works on Android Chrome, some tablets)
+if (screen.orientation && screen.orientation.lock) {
+  screen.orientation.lock('landscape').catch(() => {
+    // Not supported or not in fullscreen — fall back to CSS overlay only
+  });
+}
+
+// CSS @media (orientation: portrait) handles the visual overlay,
+// but also run JS check on load and resize for belt-and-suspenders
+checkOrientation();
+window.addEventListener('resize', checkOrientation);
+window.addEventListener('orientationchange', () => {
+  // Small delay so dimensions settle after rotation
+  setTimeout(checkOrientation, 150);
+});
 </script>
 </body>
 </html>
